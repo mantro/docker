@@ -10,6 +10,10 @@ RUN sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.8
 RUN sudo chmod +x ./kubectl
 RUN sudo mv ./kubectl /usr/local/bin/kubectl
 
+# setup nodejs
+RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+RUN sudo apt-get install -y nodejs
+
 # setup yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
