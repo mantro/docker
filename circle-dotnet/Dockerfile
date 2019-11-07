@@ -7,4 +7,6 @@ RUN apt-get update \
 RUN add-apt-repository ppa:rmescandon/yq \
     && apt-get update \
     && apt install yq -y \
-    && apt install gawk -y
+    && apt install gawk -y \ 
+    && curl -sL https://deb.nodesource.com/setup_11.x | bash \
+    && apt-get install nodejs -y
